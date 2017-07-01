@@ -9,9 +9,7 @@ import Coffee from './Coffee.jsx'
 const App = () => (
   <Router>
     <div>
-      <div>
-        <Coffee />
-      </div>
+     
       <ul>
         <li><Link to="/">Home</Link></li>
         <li><Link to="/coffee">Coffee</Link></li>
@@ -45,13 +43,17 @@ const About = () => (
 
 const Drinks = ({match}) => (
   <div>
-    <h3>hello drinnks</h3>
+    <h3>tasty drinks</h3>
     <ul>
       <li>
-          <p>coffee</p>
           <Link to={`${match.url}/caffeinated`}>
           caffeinated
           </Link>
+      </li>
+      <li>
+        <Link to={`${match.url}/decaf`}>
+          decaf
+        </Link>
       </li>
     </ul>
     <Route path={`${match.url}/:drinkId`} component={Drink}/>

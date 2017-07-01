@@ -4,10 +4,14 @@ import {
   Route,
   Link
 } from 'react-router-dom'
+import Coffee from './Coffee.js'
 
 const App = () => (
   <Router>
     <div>
+      <div>
+        <Coffee />
+      </div>
       <ul>
         <li><Link to="/">Home</Link></li>
         <li><Link to="/about">About</Link></li>

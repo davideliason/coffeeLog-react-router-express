@@ -46,8 +46,23 @@ const About = () => (
 const Drinks = ({match}) => (
   <div>
     <h3>hello drinnks</h3>
+    <ul>
+      <li>
+          <p>coffee</p>
+          <Link to={`${match.url}/caffeinated`}>
+          caffeinated
+          </Link>
+      </li>
+    </ul>
+    <Route path={`${match.url}/:drinkId`} component={Drink}/>
   </div>
 )
+
+const Drink = ({ match }) => (
+      <div>
+         <h3>{match.params.drinkId}</h3>
+      </div>
+  )
 
 const Topics = ({ match }) => (
   <div>

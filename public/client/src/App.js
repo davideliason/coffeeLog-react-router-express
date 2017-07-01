@@ -4,7 +4,7 @@ import {
   Route,
   Link
 } from 'react-router-dom'
-import Coffee from './Coffee.js'
+import Coffee from './Coffee.jsx'
 
 const App = () => (
   <Router>

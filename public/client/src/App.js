@@ -16,6 +16,7 @@ const App = () => (
         <li><Link to="/">Home</Link></li>
         <li><Link to="/coffee">Coffee</Link></li>
         <li><Link to="/topics">Topics</Link></li>
+        <li><Link to="/drinks">Drinks</Link></li>
       </ul>
 
       <hr/>
@@ -23,9 +24,12 @@ const App = () => (
       <Route exact path="/" component={Home}/>
       <Route path="/coffee" component={Coffee}/>
       <Route path="/topics" component={Topics}/>
+      <Route path="/drinks" component={Drinks}/>
     </div>
   </Router>
 )
+
+
 
 const Home = () => (
   <div>
@@ -36,6 +40,12 @@ const Home = () => (
 const About = () => (
   <div>
     <h2>About</h2>
+  </div>
+)
+
+const Drinks = ({match}) => (
+  <div>
+    <h3>hello drinnks</h3>
   </div>
 )
 

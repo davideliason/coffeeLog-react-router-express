@@ -16,6 +16,10 @@ app.get("/api/coffee",(req,res) => {
     console.log(`Sent ${coffee}`);
 });
 
+app.get("*", (req,res) => {
+	res.sendFile(path.join(__dirname,'public','client','public','index.html'));
+})
+
 app.listen(app.get('port'), () => {
 	console.log("server running at 8080");
 });

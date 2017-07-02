@@ -7,7 +7,7 @@ class Coffee extends React.Component{
 	render(){
 		var coffeeStyle = {
 		   marginLeft: 50,
-		   color: 'red'
+		   color: 'blue'
 	    };
 
 		return(

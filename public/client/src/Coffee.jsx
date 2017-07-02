@@ -3,7 +3,11 @@ import './Coffee.css';
 
 
 class Coffee extends React.Component{
-
+    constructor(props){
+    	super(props);
+    	this.setState = {
+    		drinks: "coffee"    	}
+    }
 	render(){
 		var coffeeStyle = {
 		   marginLeft: 50,
@@ -12,10 +16,20 @@ class Coffee extends React.Component{
 
 		return(
 			<div style={coffeeStyle}>
-				<p>hello coffee</p>
+				<p>hello </p>
 			</div>
 			)
 	}
 };
+
+class Espresso extends React.Component{
+	render(){
+		return(
+			<div>
+				<p>espresso ></p>
+			</div>
+			);
+	}
+}
 
 export default Coffee

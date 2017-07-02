@@ -9,7 +9,7 @@ import Coffee from './Coffee.jsx'
 const App = () => (
   <Router>
     <div>
-      <Coffee />
+      <Coffee name="coffee" />
      
       <ul>
         <li><Link to="/">Home</Link></li>

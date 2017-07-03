@@ -13,7 +13,7 @@ class App extends Component {
   }
   render() {
     var appStyle = {
-      backgroundColor: "blue",
+      backgroundColor: this.state.colors[1],
       width: 200,
       marginLeft: 200,
       border: "1px solid white",
@@ -24,7 +24,7 @@ class App extends Component {
       <div className="App">
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h2 style={appStyle}>Welcome to React {this.state.colors[0]}</h2>
+          <h2 style={appStyle}>Welcome to React </h2>
         </div>
         
         <p>{this.props.name}: i'm a prop</p>

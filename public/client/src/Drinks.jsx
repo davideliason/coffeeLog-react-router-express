@@ -1,4 +1,5 @@
 import React from 'react';
+import Coffee from './Coffee.jsx';
 
 class Drinks extends React.Component{
 	constructor(props){
@@ -9,7 +10,10 @@ class Drinks extends React.Component{
 	}
 	render(){
 		return(
+			 <div>
 				<p>Drinks: {this.state.drinks[0]}</p>
+				<Coffee />
+			 </div>
 			);
 	}
 }

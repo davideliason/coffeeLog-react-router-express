@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Coffee from './Coffee.jsx';
 
 
 class App extends Component {
@@ -12,7 +13,11 @@ class App extends Component {
   }
   render() {
     var appStyle = {
-      backgroundColor: "blue"
+      backgroundColor: "blue",
+      width: 200,
+      marginLeft: 200,
+      border: "1px solid white",
+      padding: "0 20 20 20"
     };
 
     return (
@@ -23,6 +28,7 @@ class App extends Component {
         </div>
         
         <p>{this.props.name}: i'm a prop</p>
+        <Coffee />
       </div>
     );
   }

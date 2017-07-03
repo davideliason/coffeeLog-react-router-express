@@ -8,12 +8,12 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state = {
-      colors : ["blue","red"]
+      colors : ["blue","red","yellow"]
     }
   }
   render() {
     var appStyle = {
-      backgroundColor: this.state.colors[1],
+      backgroundColor: this.state.colors[this.state.colors.length-1],
       width: 200,
       marginLeft: 200,
       border: "1px solid white",

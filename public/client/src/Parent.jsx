@@ -6,6 +6,7 @@ import {
 } from 'react-router-dom'
 
 import App from './App.js';
+import About from './About.jsx';
 
 class Parent extends Component{
 	render(){
@@ -14,8 +15,10 @@ class Parent extends Component{
 					<div>
 						<ul>
 							<li><Link to="/">Drinks</Link></li>
+							<li><Link to="/about">About</Link></li>
 						</ul>
 						<Route exact path="/" component={App} />
+						<Route exact path="/about" component={About} />
 					</div>
 				</Router>
 			);

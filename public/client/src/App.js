@@ -13,6 +13,7 @@ class App extends Component {
 
     this.addColor = this.addColor.bind(this);
 
+
   }
 
    addColor(e){
@@ -24,6 +25,7 @@ class App extends Component {
         colors : colorArray
         });
 
+      this._inputColor.value = "";
     }
 
   render() {

@@ -10,6 +10,7 @@ class App extends Component {
     this.state = {
       colors : ["blue","red","yellow"]
     }
+    this.addColor = this.addColor.bind(this);
   }
   render() {
     var appStyle = {
@@ -20,6 +21,12 @@ class App extends Component {
       padding: "0 20 20 20"
     };
 
+    function addColor(e){
+      e.preventDefault();
+
+
+    }
+
     return (
       <div className="App">
         <div className="App-header">
@@ -28,6 +35,10 @@ class App extends Component {
         </div>
         
         <p>{this.props.name}: i'm a prop</p>
+           <form onSubmit={this.addColor}>
+             <input placeholder="update color"></input>
+             <button type="submit">update</button>
+           </form>
         <Coffee />
       </div>
     );

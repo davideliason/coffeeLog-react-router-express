@@ -12,7 +12,7 @@ class Drinks extends React.Component{
 		return(
 			 <div>
 				<p>Drinks: {this.state.drinks[0]}</p>
-				<Coffee type="caffeinated" />
+				<Coffee colors={this.props.colors} type="caffeinated" />
 			 </div>
 			);
 	}

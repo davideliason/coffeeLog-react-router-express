@@ -9,13 +9,23 @@ import App from './App.js';
 import About from './About.jsx';
 
 class Parent extends Component{
+
 	render(){
+		var parentStyleUL = {
+		  listStyleType: "none",
+		  marginLeft: 200
+	     };
+	    var parentStyleLi = {
+	    	display: "inline",
+	    	marginLeft: 20,
+	    	fontSize: "1.5em"
+	    };
 		return(
 				<Router>
-					<div>
-						<ul>
-							<li><Link to="/">Drinks</Link></li>
-							<li><Link to="/about">About</Link></li>
+					<div >
+						<ul style={parentStyleUL}>
+							<li style={parentStyleLi}><Link to="/">Drinks</Link></li>
+							<li style={parentStyleLi}><Link to="/about">About</Link></li>
 						</ul>
 						<Route exact path="/" component={App} />
 						<Route exact path="/about" component={About} />

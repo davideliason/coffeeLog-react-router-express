@@ -10,7 +10,8 @@ class About extends React.Component {
 			height: 400,
 			marginLeft: 200,
 			textAlign: "center",
-			paddingTop: 50
+			paddingTop: 50,
+			border: "3px solid yellow"
 	    };
 
 		return(

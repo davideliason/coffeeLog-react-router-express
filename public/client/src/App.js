@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Coffee from './Coffee.jsx';
+import Drinks from './Drinks.jsx';
 
 
 class App extends Component {
@@ -51,7 +51,7 @@ class App extends Component {
              <input ref={ (a) => this._inputColor = a }placeholder="update color"></input>
              <button type="submit">update</button>
            </form>
-        <Coffee />
+        <Drinks />
       </div>
     );
   }

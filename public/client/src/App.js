@@ -9,9 +9,23 @@ class App extends Component {
     super(props);
     this.state = {
       colors : ["blue","red","yellow"]
-    }
+    };
+
     this.addColor = this.addColor.bind(this);
+
   }
+
+   addColor(e){
+      e.preventDefault();
+
+      var colorArray = this.state.colors;
+      colorArray.push(this._inputColor.value);
+      this.setState({
+        colors : colorArray
+        });
+
+    }
+
   render() {
     var appStyle = {
       backgroundColor: this.state.colors[this.state.colors.length-1],
@@ -21,11 +35,7 @@ class App extends Component {
       padding: "0 20 20 20"
     };
 
-    function addColor(e){
-      e.preventDefault();
-
-
-    }
+    
 
     return (
       <div className="App">
@@ -36,7 +46,7 @@ class App extends Component {
         
         <p>{this.props.name}: i'm a prop</p>
            <form onSubmit={this.addColor}>
-             <input placeholder="update color"></input>
+             <input ref={ (a) => this._inputColor = a }placeholder="update color"></input>
              <button type="submit">update</button>
            </form>
         <Coffee />

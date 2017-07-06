@@ -16,3 +16,6 @@ $ npm start  // within public/client/src folder to start react
 ````
 $ npm start // withiin root parent directory to start express server
 ````
+
+![drinks](./about_screenshot.png?raw=true "about")
+![drinks](./drinks_screenshot.png?raw=true "drinks")

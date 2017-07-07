@@ -28,12 +28,15 @@ class App extends Component {
       e.preventDefault();
 
       var drinksArray = this.state.drinks;
-      drinksArray.push(this._inputDrink.value);
+      drinksArray.push({
+        drink: this._inputDrink.value,
+        calories: this._inputDrinkK.value});
       this.setState({
         drinks : drinksArray
         });
 
       this._inputDrink.value = "";
+      this._inputDrinkK.value="";
     }
 
     addColor(e){
@@ -68,6 +71,8 @@ class App extends Component {
         {/*(<p>{this.props.name}: i'm a prop</p>*/}
            <form onSubmit={this.addDrink}>
              <input ref={ (a) => this._inputDrink = a }placeholder="add drink"></input>
+             <input ref={ (b) => this._inputDrinkK = b }placeholder="add drink calories"></input>
+
              <button type="submit">cheers!</button>
            </form>
 

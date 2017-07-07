@@ -10,9 +10,12 @@ class Drinks extends React.Component{
 		};
 	}
 	render(){
+		let lastDrink = this.state.drinks[this.state.drinks.length-1];
+
 		return(
 			 <div>
-				<p>Drinks: {this.state.drinks[1].drink}</p>
+				<p>Drink: {lastDrink.drink}</p>
+				<p>Calories: {lastDrink.calories}</p>
 				<Coffee colors={this.state.colors} />
 			 </div>
 			);

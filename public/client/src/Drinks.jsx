@@ -5,14 +5,14 @@ class Drinks extends React.Component{
 	constructor(props){
 		super(props);
 		this.state = {
-			drinks: ["coffee","espresso"]
+			drinks: this.props.drinks
 		}
 	}
 	render(){
 		return(
 			 <div>
-				<p>Drinks: {this.state.drinks[0]}</p>
-				<Coffee colors={this.props.colors} type="caffeinated" />
+				<p>Drinks: {this.state.drinks.drink}</p>
+				<Coffee colors={this.props.colors} />
 			 </div>
 			);
 	}

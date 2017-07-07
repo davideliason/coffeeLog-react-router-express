@@ -8,21 +8,41 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state = {
-      colors : ["blue","red","yellow"]
+      drinks : [{
+        drink: "coffee",
+        calories: 0
+      },
+      {
+        drink: "espresso",
+        calories: 20
+      }],
+      colors : ["blue","green","red"]
     };
 
+    this.addDrink = this.addDrink.bind(this);
     this.addColor = this.addColor.bind(this);
-
 
   }
 
-   addColor(e){
+   addDrink(e){
       e.preventDefault();
 
-      var colorArray = this.state.colors;
-      colorArray.push(this._inputColor.value);
+      var drinksArray = this.state.drinks;
+      drinksArray.push(this._inputDrink.value);
       this.setState({
-        colors : colorArray
+        drinks : drinksArray
+        });
+
+      this._inputDrink.value = "";
+    }
+
+    addColor(e){
+      e.preventDefault();
+
+      var colorsArray = this.state.colors;
+      colorsArray.push(this._inputColor.value);
+      this.setState({
+        colors : colorsArray
         });
 
       this._inputColor.value = "";
@@ -46,11 +66,16 @@ class App extends Component {
         </div>
         
         {/*(<p>{this.props.name}: i'm a prop</p>*/}
+           <form onSubmit={this.addDrink}>
+             <input ref={ (a) => this._inputDrink = a }placeholder="add drink"></input>
+             <button type="submit">cheers!</button>
+           </form>
+
            <form onSubmit={this.addColor}>
              <input ref={ (a) => this._inputColor = a }placeholder="update color"></input>
              <button type="submit">update</button>
            </form>
-        <Drinks colors = {this.state.colors} />
+        <Drinks drinks = {this.state.drinks} />
       </div>
     );
   }

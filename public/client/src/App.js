@@ -75,7 +75,7 @@ class App extends Component {
              <input ref={ (a) => this._inputColor = a }placeholder="update color"></input>
              <button type="submit">update</button>
            </form>
-        <Drinks drinks = {this.state.drinks} />
+        <Drinks drinks = {this.state.drinks} colors={this.state.colors} />
       </div>
     );
   }

@@ -4,8 +4,7 @@ class Coffee extends React.Component {
 	render(){
 		return(
 				<div>
-					<p>coffee: {this.props.type} </p>
-					<p>{this.props.colors}</p>
+					<p>Coffee color: {this.props.colors[0]}</p>
 				</div>
 			);
 	}

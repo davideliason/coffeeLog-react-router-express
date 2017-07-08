@@ -57,10 +57,22 @@ class Drinks extends React.Component{
       padding: "0 20 20 20"
     };
 
-	let lastDrink = this.state.drinks[this.state.drinks.length-1];
+	  let lastDrink = this.state.drinks[this.state.drinks.length-1];
 
 	return(
+
 			 <div>
+         {/* input values for color and add drink */}
+             <form onSubmit={this.addDrink}>
+               <input ref={ (a) => this._inputDrink = a }placeholder="add drink"></input>
+               <input ref={ (b) => this._inputDrinkK = b }placeholder="add drink calories"></input>
+               <button type="submit">cheers!</button>
+             </form>
+
+             <form onSubmit={this.addColor}>
+               <input ref={ (a) => this._inputColor = a }placeholder="update color"></input>
+               <button className="colorButton" type="submit">update</button>
+             </form>
 				<p>Drink: {lastDrink.drink}</p>
 				<p>Calories: {lastDrink.calories}</p>
 				<Coffee colors={this.state.colors} />

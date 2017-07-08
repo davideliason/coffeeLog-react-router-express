@@ -5,86 +5,31 @@ import Drinks from './Drinks.jsx';
 
 
 class App extends Component {
-  constructor(props){
-    super(props);
-    this.state = {
-      drinks : [{
-        drink: "coffee",
-        calories: 0
-      },
-      {
-        drink: "espresso",
-        calories: 20
-      }],
-      colors : ["blue","green","red"]
-    };
+    render(){
+      return   (
+        <div className="App">
+          <div className="App-header">
+            <h2>Welcome to Drinks </h2>
+            <p className="App-intro">Find your favorite drink info</p>
+          </div>
+          
+          {/* input values for color and add drink */}
+             <form onSubmit={this.addDrink}>
+               <input ref={ (a) => this._inputDrink = a }placeholder="add drink"></input>
+               <input ref={ (b) => this._inputDrinkK = b }placeholder="add drink calories"></input>
+               <button type="submit">cheers!</button>
+             </form>
 
-    this.addDrink = this.addDrink.bind(this);
-    this.addColor = this.addColor.bind(this);
-
-  }
-
-   addDrink(e){
-      e.preventDefault();
-
-      var drinksArray = this.state.drinks;
-      drinksArray.push({
-        drink: this._inputDrink.value,
-        calories: this._inputDrinkK.value});
-      this.setState({
-        drinks : drinksArray
-        });
-
-      this._inputDrink.value = "";
-      this._inputDrinkK.value="";
-    }
-
-    addColor(e){
-      e.preventDefault();
-
-      var colorsArray = this.state.colors;
-      colorsArray.push(this._inputColor.value);
-      this.setState({
-        colors : colorsArray
-        });
-
-      this._inputColor.value = "";
-    }
-
-  render() {
-    var appStyle = {
-      backgroundColor: this.state.colors[this.state.colors.length-1],
-      width: 200,
-      marginLeft: 420,
-      border: "1px solid white",
-      padding: "0 20 20 20"
-    };
-
-    
-
-    return (
-      <div className="App">
-        <div className="App-header">
-          <h2 style={appStyle}>Welcome to Drinks </h2>
+             <form onSubmit={this.addColor}>
+               <input ref={ (a) => this._inputColor = a }placeholder="update color"></input>
+               <button className="colorButton" type="submit">update</button>
+             </form>
+          <Drinks />
         </div>
-        
-        {/*(<p>{this.props.name}: i'm a prop</p>*/}
-           <form onSubmit={this.addDrink}>
-             <input ref={ (a) => this._inputDrink = a }placeholder="add drink"></input>
-             <input ref={ (b) => this._inputDrinkK = b }placeholder="add drink calories"></input>
+        );
+       }
+      }
 
-             <button type="submit">cheers!</button>
-           </form>
-
-           <form onSubmit={this.addColor}>
-             <input ref={ (a) => this._inputColor = a }placeholder="update color"></input>
-             <button type="submit">update</button>
-           </form>
-        <Drinks drinks = {this.state.drinks} colors={this.state.colors} />
-      </div>
-    );
-  }
-}
 
 export default App;
 

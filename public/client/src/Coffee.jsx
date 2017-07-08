@@ -6,8 +6,8 @@ class Coffee extends React.Component {
 				<div>
 					<p>Coffee color: {this.props.colors[0]}</p>
 				</div>
-			);
-	}
-}
+			  )
+	         }
+           }
 
 export default Coffee;

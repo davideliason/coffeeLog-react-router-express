@@ -51,7 +51,7 @@ class Drinks extends React.Component{
   render() {
     let drinkStyle = {
       backgroundColor: this.state.colors[this.state.colors.length-1],
-      width: 200,
+      width: 300,
       border: "1px solid white",
       padding: "5px 0px 5px 30px"
     };
@@ -62,23 +62,26 @@ class Drinks extends React.Component{
 
 			 <div>
          {/* input values for color and add drink */}
-             <form onSubmit={this.addDrink}>
-               <input ref={ (a) => this._inputDrink = a }placeholder="add drink"></input>
-               <input ref={ (b) => this._inputDrinkK = b }placeholder="add drink calories"></input>
-               <button type="submit">cheers!</button>
-             </form>
+             
 
             
              <div style={drinkStyle}>
 				        <p>Drink: {lastDrink.drink}</p>
 			        	<p>Calories: {lastDrink.calories}</p>
-                <form onSubmit={this.addColor}>
-                  <input ref={ (a) => this._inputColor = a }placeholder="update color"></input>
-                  <button className="colorButton" type="submit">update</button>
+               
+
+                <form onSubmit={this.addDrink}>
+                  <input ref={ (a) => this._inputDrink = a }placeholder="add drink"></input>
+                  <input ref={ (b) => this._inputDrinkK = b }placeholder="add drink calories"></input>
+                  <button type="submit">cheers!</button>
                 </form>
              </div>
 
 				     <Coffee colors={this.state.colors} />
+             <form onSubmit={this.addColor}>
+                <input ref={ (a) => this._inputColor = a }placeholder="update color"></input>
+                <button className="colorButton" type="submit">update</button>
+             </form>
 			 </div>
 		   )
           }

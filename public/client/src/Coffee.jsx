@@ -2,9 +2,14 @@ import React from 'react';
 
 class Coffee extends React.Component {
 	render(){
+			let coffeeStyle = {
+				border: "1px solid yellow",
+				width: 200
+			};
+
 		return(
-				<div>
-					<p>Coffee color: {this.props.colors[0]}</p>
+				<div style={coffeeStyle}>
+					<p>Coffee Bg-color: {this.props.colors[0]}</p>
 				</div>
 			  )
 	         }
